@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonComponent from './components/ButtonComponent.jsx';
-import NavBarComponent from './components/NavBarComponent.jsx';
 import ItemListContainerComponent from './components/ItemListContainerComponent.jsx'; 
+import Router from './routes/Router.jsx';
 
 function App () {
   const [state, setState] = useState(0); /* Usa useState para inicializar el estado */
@@ -12,7 +12,7 @@ function App () {
   
   return (
     <React.Fragment>
-      <NavBarComponent/>
+      <Router />
       <ItemListContainerComponent greeting="¡Hola! Que disfrutes tu página favorita"/> 
       <div className="App">
         <h1>Mi tienda: JB </h1>
