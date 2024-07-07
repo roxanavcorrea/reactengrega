@@ -1,5 +1,5 @@
 import React from "react";
-import { getProductById } from "../services/products";
+import { getProductById } from "../src/services/products.jsx";
 
 export const useProductById = (id) => {
     const [product, setProduct] = React.useState([]);

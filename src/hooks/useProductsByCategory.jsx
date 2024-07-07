@@ -1,5 +1,5 @@
 import React from "react";
-import { getProductsByCategory } from "../services/products";
+import { getProductsByCategory } from "../src/services/products.jsx";
 
 export const useProductsByCategory = () => {
         const [products, setProducts] = React.useState([]);

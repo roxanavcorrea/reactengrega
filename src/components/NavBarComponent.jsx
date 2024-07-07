@@ -1,11 +1,11 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidgetComponent from './CartWidgetComponent.jsx';
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidgetComponent from "./CartWidgetComponent.jsx";
 import { Link } from "react-router-dom";
-import { getAllCategories } from '../services/products.js';
+import { getAllCategories } from "../services/products.jsx";
 
 const NavBarComponent = () => {
     const [categories, setCategories] = React.useState([])

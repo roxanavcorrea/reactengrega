@@ -1,13 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import Category from './pages/Category.jsx';
-import Item from './pages/Item.jsx';
-import NavBarComponent from './components/NavBarComponent.jsx';
-
-const Home = () => <div>Home</div>;
-const Category = () => <div>Category</div>;
-const Item = () => <div>Item</div>;
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBarComponent from "./NavBarComponent";
+import Home from "./pages/Home";
+import Item from "./pages/Item";
+import EventPage from "./pages/EventPage";
+import Category from "./pages/Category";
+import Checkout from "./pages/Checkout";  
 
 const Router = () => {
     return (
@@ -16,10 +14,14 @@ const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/item/:id" element={<Item />} />
+                <Route path="/eventos/animados" element={<EventPage />} />
                 <Route path="/category/:id" element={<Category />} />
-            </Routes>
+                <Route path="/checkout" element={<Checkout />} /> 
+                <Route path="#" element={<h1> Not Found </h1>} /> 
+                </Routes>
         </BrowserRouter>
     );
 }
 
 export default Router;
+

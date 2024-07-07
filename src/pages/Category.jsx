@@ -1,6 +1,6 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useProductsByCategory } from '../hooks/useProductsByCategory';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useProductsByCategory } from "../src/hooks/useProductsByCategory.jsx";
 
 const Category = () => {
     const {id} = useParams ()

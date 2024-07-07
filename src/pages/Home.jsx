@@ -1,7 +1,7 @@
-import React from 'react';
-import ItemListContainerComponent from '../components/ItemListContainerComponent';
-import { useProducts } from "../hooks/useProducts";
-import LoaderComponents from '../components/LoaderComponents';
+import React from "react";
+import ItemListContainerComponent from "../src/components/ItemListContainerComponent.jsx";
+import { useProducts } from "../src/hooks/useProducts.jsx";
+import LoaderComponents from "../src/components/LoaderComponents.jsx";
 
 const Home = () => {
     const { products, loading } = useProducts();

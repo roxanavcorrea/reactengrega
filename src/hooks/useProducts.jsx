@@ -1,23 +1,27 @@
 import React from "react";
-import { getAllProducts } from './services/products.js';
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 export const useProducts = () => {
     const [products, setProducts] = React.useState([]);
     const [error, setError] = React.useState(null);
-    const [loading, setLoading] = React - useState(true);
+    const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
-        getAllProducts()
-            .then((response) => {
-                setProducts(response.data.products);
+        const db = getFirestore();
+        const productsCollection = collection(db, "products");
+
+        getDocs(productsCollection)
+            .then((snapshot) => {
+                const productsList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setProducts(productsList);
+                setLoading(false);
             })
             .catch((error) => {
-                console.error(error);
-                setError("Error al cargar los productos. Por favor, intenta nuevamente más tarde.");
-            }).finally(() => {
+                setError(error);
                 setLoading(false);
             });
-    }, [product]);
+    }, []);
 
     return { products, error, loading };
-}
+};
+

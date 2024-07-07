@@ -1,7 +1,7 @@
-import React from 'react';
-import { useProductById } from '../hooks/useProductById';
-import ItemDetailContainer from '../components/ItemDetailContainer';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import { useProductById } from "../hooks/useProductById.jsx";
+import ItemDetailContainer from "../components/ItemDetailContainer.jsx";
+import { useParams } from "react-router-dom";
 
 const Item = () => {
     const {id} = useParams ()
